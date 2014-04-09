@@ -1,0 +1,17 @@
+﻿<Window x:Class="ShowInstalledFonts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Installed Fonts" Height="450" Width="525">
+    <Grid>
+        <DockPanel>
+            <TextBox Name="DemoFontTextBox" FontSize="20" Height="50" Margin="10,20,10,20" HorizontalScrollBarVisibility="Auto" Text="Try out your selected font here" DockPanel.Dock="Top"></TextBox>
+            <ListBox Name="FontListBox" FontSize="20" Margin="20,0,20,20" SelectionChanged="FontListBox_SelectionChanged" DockPanel.Dock="Bottom">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontFamily="{Binding}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+    </Grid>
+</Window>
